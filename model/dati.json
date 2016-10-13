@@ -1,0 +1,29 @@
+{
+	"stores":[
+		{
+		"deviceId":"ALL",
+		"name":"All",
+		"location":"",
+		"city":"All"
+	},
+		{
+		"deviceId":"418579fa-c13a-4102-8cb0-92131306aa95",
+		"name":"SAP Forum 2016",
+		"location":"45.4864338,9.1294259",
+		"city":"Milano"
+	},
+	{
+		"deviceId":"347a274c-f34a-441a-a803-199c34c0a5a4",
+		"name":"Other 1",
+		"location":"45.6934912,9.304687",
+		"city":"Casatenovo"
+	},
+	{
+		"deviceId":"c9d7898e-503e-49c5-9c9e-d9312e0528e1",
+		"name":"Other 2",
+		"location":"45.8005303,9.049077",
+		"city":"Como"
+	}
+	]
+	
+}

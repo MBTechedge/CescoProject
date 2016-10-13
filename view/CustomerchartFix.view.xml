@@ -1,0 +1,116 @@
+<mvc:View controllerName="iot.techedge.controller.CustomerchartFix" xmlns:viz="sap.viz.ui5.controls" xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:layout="sap.ui.layout" xmlns="sap.m" height="100%" xmlns:comm="sap.suite.ui.commons" xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:core="sap.ui.core">
+	<App id="landing">
+		<Page title="Customer Accesses History" showHeader="true" showNavButton="true" navButtonPress="onNavBackHome">
+			<content>
+				
+				<layout:FixFlex id='chartFixFlex' minFlexSize="250">
+					<!--Below is the setting panel -->
+					<layout:fixContent>
+						<Panel id='settingsPanel' class="panelStyle" expandable="true" expanded="true" headerText="Settings" width="auto">
+							<content>
+								<HBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="Store" design="Bold" class='settingsLabel' visible="true" ></Label>
+										<Select visible="true" forceSelection="true" items="{rpiJ>/stores}" id="selectStoreId"  change="onChange" >
+											
+												<core:Item key="{rpiJ>deviceId}" text="{rpiJ>name} ({rpiJ>city})"/>
+											
+										</Select>
+									</VBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="From Date Interval" design="Bold" class='settingsLabel'></Label>
+										<DateTimePicker id="fromDateId" value="20160218103230" valueFormat="yyyyMMddHHmmss" displayFormat="short" change="handleChange"/>
+									</VBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="To Date Interval" design="Bold" class='settingsLabel'></Label>
+										<DateTimePicker id="toDateId" value="20160218103230" valueFormat="yyyyMMddHHmmss" displayFormat="short" change="handleChange"/>
+									</VBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="Time Frame" design="Bold" class='settingsLabel' visible="true" ></Label>
+										<Select visible="true" forceSelection="true" items="{interJ>/fixedIntervals}" selectedKey="86400" id="selectId"  change="onChange" >
+											
+												<core:Item key="{interJ>id}" text="{interJ>value} {interJ>measure}"/>
+											
+										</Select>
+									</VBox>
+									<VBox alignContent="End" justifyContent="End" alignItems="End" class="sapUiMediumMarginStart">
+										<Button text="Apply" press="applyPress" ></Button>
+									</VBox>
+								</HBox>
+							</content>
+						</Panel>
+						
+					</layout:fixContent>
+					<layout:flexContent>
+						<comm:ChartContainer id="chartContainer" showFullScreen="true" showPersonalization="false" autoAdjustHeight="true" showLegend="false"
+							personalizationPress="attachPersonalizationPress" contentChange="attachContentChange">
+							<comm:content>
+								<comm:ChartContainerContent id="chartViz" icon="sap-icon://line-chart" title="Line Chart" >
+									<comm:content>
+										<!-- VIZ FRAME START -->
+										<viz:VizFrame id="idVizFrame" vizType='column' legendVisible="false">
+											<viz:dataset>
+												<viz.data:FlattenedDataset data="{dataFixedJ>/AccessPerDays}">
+													<viz.data:dimensions>
+														<viz.data:DimensionDefinition name="Time" value="{dataFixedJ>Timestamp}"/>
+													</viz.data:dimensions>
+													<viz.data:measures>
+														<viz.data:MeasureDefinition name="dBm" value="{dataFixedJ>AVG_PWR}"/>
+														<viz.data:MeasureDefinition name="Accessi" value="{dataFixedJ>ACCESSI}"/>
+													</viz.data:measures>
+												</viz.data:FlattenedDataset>
+											</viz:dataset>
+											<viz:feeds>
+												<viz.feeds:FeedItem id='1' uid="valueAxis" type="Measure" values="Accessi"/>
+												<viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension" values="Time"/>
+												<!--<viz.feeds:FeedItem id='categoryAxisFeed2' uid="categoryAxis" type="Dimension" values="dBm"/>-->
+											</viz:feeds>
+											<!--<viz:layoutData>-->
+											<!--	<FlexItemData growFactor="1" />-->
+											<!--</viz:layoutData>-->
+										</viz:VizFrame>
+										<!-- VIZ FRAME END -->
+									</comm:content>
+								</comm:ChartContainerContent>
+								<comm:ChartContainerContent icon="sap-icon://table-view" title="Table">
+									<comm:content>
+										<Table id="chartContainerContentTable" items="{dataFixedJ>/AccessPerDays}">
+											<columns>
+												<Column>
+													<Text text="Time"/>
+												</Column>
+												<Column>
+													<Text text="Avg dbm"/>
+												</Column>
+												<Column>
+													<Text text="Accessi"/>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Text text="{dataFixedJ>Timestamp}"/>
+														<Text text="{dataFixedJ>AVG_PWR}"/>
+														<Text text="{dataFixedJ>ACCESSI}"/>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</comm:content>
+								</comm:ChartContainerContent>
+							</comm:content>
+						</comm:ChartContainer>
+					</layout:flexContent>
+				</layout:FixFlex>
+			</content>
+			<footer>
+				<Toolbar>
+					<ToolbarSpacer/>
+				</Toolbar>
+			</footer>
+		</Page>
+	</App>
+</mvc:View>

@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog
+		confirm="handleConfirm">
+		<filterItems>
+			<ViewSettingsFilterItem text="Provincia" key="C">
+				<items>
+					<ViewSettingsItem text="Milano" key="MI" />
+					<ViewSettingsItem text="Como" key="CO" />
+					<ViewSettingsItem text="Lecco" key="LC" />
+				</items>
+			</ViewSettingsFilterItem>
+		</filterItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

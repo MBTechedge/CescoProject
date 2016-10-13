@@ -1,0 +1,44 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="iot.techedge.controller.Master"
+	xmlns="sap.m" xmlns:t="sap.ui.table" xmlns:core="sap.ui.core">
+	<Page id="master" title="Stores" icon="sap-icon://home" showHeader="true" class="sapUiStdPage"
+		showNavButton="true" navButtonPress="onNavBackHome" >
+		<!--<header>-->
+		<!--	<core:Icon src="sap-icon://retail-store-manager"></core:Icon>-->
+		<!--</header>-->
+		
+		<subHeader>
+			<Toolbar>
+				<SearchField search="onSearch" width="100%" />
+			</Toolbar>
+		</subHeader>
+		<content>
+			
+			<List id="listMasterId" items="{
+					path:'rpiJ>/stores'
+					}"
+				busyIndicatorDelay="250" enableBusyIndicator="true">
+				<items>
+					<StandardListItem title="{rpiJ>name}" description="{rpiJ>city}" 
+						press="onListItemPress" type="Navigation" />
+					<!-- <CustomListItem>
+						<HBox>
+							<core:HTML	content='&lt;img src=&quot;data:{sampleData>City}&quot; /&gt;'>
+							</core:HTML>
+						</HBox>
+					</CustomListItem> -->
+				</items>
+			</List>
+
+
+
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer />
+				<Button id="btSorterId" icon="sap-icon://filter"
+					press="onFilter"></Button>
+			</Toolbar>
+		</footer>
+
+	</Page>
+</mvc:View>

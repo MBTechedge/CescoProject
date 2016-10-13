@@ -1,0 +1,36 @@
+{
+	"tiles": [{
+		"id":"1",
+		"icon" : "customer-history",
+		"type" : "None",
+		"number" : "...",
+		"title" : "Customer Distribution",
+		"info" : "Traffic by Day",
+		"infoState" : "Success",
+		"route":"customerchartfix",
+		"subPath":"H"
+	},
+	{
+		"id":"2",
+		"icon" : "customer",
+		"type" : "None",
+		"number" : "...",
+		"title" : "Current Customers",
+		"info" : "Customers by Store",
+		"infoState" : "Success",
+		"route":"splitapp",
+		"subPath":"L"
+	},
+	{
+		"id":"3",
+		"icon" : "map-2",
+		"type" : "None",
+		"number" : "",
+		"title" : "Store Map",
+		"info" : "GMaps",
+		"infoState" : "Success",
+		"route":"gmaps",
+		"subPath":null
+	}
+	]
+}

@@ -1,0 +1,90 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="iot.techedge.controller.Launchpad"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" displayBlock="true" >
+	<App id="launch">
+		<Page title="Title" showHeader="false">
+			<!--<headerContent>-->
+			<!--	<Button icon="sap-icon://action" tooltip="Share"/>-->
+			<!--</headerContent>-->
+			<content>
+				<l:FixFlex>
+					<l:fixContent>
+						<Toolbar design="Solid">
+							<Button type="Transparent" icon="sap-icon://home"></Button>
+							
+							<ToolbarSpacer/>
+							<Title text="Accesses Counter"></Title>
+							<ToolbarSpacer/>
+							<Button icon="sap-icon://log" type="Transparent"></Button>
+						</Toolbar>
+						<Image src="img/techedgelogo_small.png" height="8%" class="sapUiTinyMarginTop" ></Image>
+						</l:fixContent>
+						<l:flexContent  >
+						<!--<u:Shell id="myShell" icon="img/techedgelogo_small.png"  >-->
+						<!--	<u:headItems>-->
+						<!--		<u:ShellHeadItem showSeparator="false" tooltip="Home" icon="sap-icon://home" visible="true" press="handlePressHome"/>-->
+						<!--	</u:headItems>-->
+						<!--	<u:headEndItems>-->
+						<!--		<u:ShellHeadItem icon="sap-icon://log" tooltip="Logoff" press="handleLogoffPress"/>-->
+						<!--	</u:headEndItems>-->
+						<!--<u:user>-->
+						<!--	<u:ShellHeadUserItem image="sap-icon://person-placeholder" username="Karl Mustermann" press="handleUserItemPressed"/>-->
+						<!--</u:user>-->
+						<!--<u:search>-->
+						<!--<SearchField search="handleSearchPressed"/>-->
+						<!--	<Label text="Accesses Counter" ></Label>-->
+						<!--</u:search>-->
+						<!--<u:paneContent>-->
+						<!--	<Text text="Lorem ipsum"/>-->
+						<!--</u:paneContent>-->
+						<!--</u:Shell>-->
+						<!--<Bar>-->
+						<!--	<contentLeft>-->
+						<!--	</contentLeft>-->
+						<!--	<contentMiddle>-->
+						<!--	<Title text="Launch Pad" textAlign="Initial" ></Title>-->
+						<!--	</contentMiddle>-->
+						<!--</Bar>-->
+						<!--<Bar design="Header" >-->
+						<!--	<contentLeft>-->
+						<!--		<Image src="img/techedgelogo_small.png" height="100%" alt="TechedgeGroup S.p.A."></Image>-->
+						<!--	</contentLeft>-->
+						<!--</Bar>-->
+						<!--<l:Grid defaultSpan="L12 M12 S12" class="sapUiSmallMarginTop">-->
+						<!--<l:content>-->
+						<!--<Title text="Trends" textAlign="Initial" titleStyle="H3"></Title>-->
+						<TileContainer tiles="{tilesJ>/tiles}" >
+							<StandardTile icon="sap-icon://{tilesJ>icon}" type="{tilesJ>type}" number="{tilesJ>number}" title="{tilesJ>title}" info="{tilesJ>info}"
+								infoState="{tilesJ>infoState}" press="onPressTile"/>
+						</TileContainer>
+						<!--<VBox direction="Row" renderType="Div" justifyContent="Center" alignItems="Stretch" wrap="NoWrap" alignContent="Stretch">-->
+						<!--<FlexBox alignItems="Start" justifyContent="Start">	-->
+						<!--<StandardTile icon="sap-icon://customer-history" type="None" number="152" title="Customers Distribution" info="Traffic by Day"-->
+						<!--	infoState="Success"/>-->
+						<!--<StandardTile icon="sap-icon://map-2" type="None" number="" title="Store Map" info="GMaps" infoState="Success"/>-->
+						<!--<layoutData>-->
+						<!--	<l:GridData span="L9 M9 S9" />-->
+						<!--</layoutData>-->
+						<!--</FlexBox>-->
+						<!--</VBox>-->
+						<!--<Title text="Real-Time Data" textAlign="Initial" titleStyle="H3">-->
+						<!--	<layoutData>-->
+						<!--	<l:GridData span="L3 M3 S3" />-->
+						<!--</layoutData>-->
+						<!--</Title>-->
+						<!--<VBox direction="Row" renderType="Div" justifyContent="Center" alignItems="Stretch" wrap="NoWrap" alignContent="Stretch">-->
+						<!--<FlexBox alignItems="Start" justifyContent="Start">		-->
+						<!--	<StandardTile icon="sap-icon://customer" type="None" number="12" title="Current Customers" info="Customers by Store" infoState="Success"-->
+						<!--		press="showCurrent"/>-->
+						<!--		<layoutData>-->
+						<!--	<l:GridData span="L9 M9 S9" />-->
+						<!--</layoutData>-->
+						<!--</FlexBox>-->
+						<!--</l:content>-->
+						<!--</l:Grid>-->
+					</l:flexContent>
+				</l:FixFlex>
+			</content>
+		</Page>
+	</App>
+	
+</mvc:View>

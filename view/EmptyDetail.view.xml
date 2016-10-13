@@ -1,0 +1,11 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="iot.techedge.controller.EmptyDetail"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" >
+	<Page title="Title" showHeader="false">
+			<!--<headerContent>-->
+			<!--	<Button icon="sap-icon://action" tooltip="Share"/>-->
+			<!--</headerContent>-->
+			<content>
+		
+			</content>
+		</Page>
+</mvc:View>

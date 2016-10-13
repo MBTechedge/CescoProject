@@ -1,0 +1,24 @@
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	controllerName="iot.techedge.controller.Gmaps"
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout" 
+	xmlns:u="sap.ui.unified" 
+	xmlns:layout="sap.ui.layout" 
+	 >
+	<Page title="Store Map" showHeader="true" showNavButton="true" navButtonPress="onNavBackHome">
+		<content>
+
+		 	<core:HTML content='&lt;div id=&quot;map&quot; style=&quot;width:100%;height:100%;border:0px solid&quot;&gt;&lt;/div&gt;'>
+
+			</core:HTML> 
+		</content>
+		<footer>
+				<Toolbar>
+					<ToolbarSpacer/>
+				</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>
